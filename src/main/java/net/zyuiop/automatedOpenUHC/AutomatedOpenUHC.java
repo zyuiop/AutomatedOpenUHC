@@ -19,10 +19,12 @@ public class AutomatedOpenUHC extends JavaPlugin {
 	public RefreshThread thread = null;
 	
 	public void onEnable() {
+		this.saveDefaultConfig();
+		
 		this.language = getConfig().getString("language", "en");
 		loadTranslations();
 		
-		this.saveDefaultConfig();
+		
 		
 		plugin = (OpenUHC) getServer().getPluginManager().getPlugin("OpenUHC");
 		thread = new RefreshThread(this);

@@ -28,7 +28,7 @@ public class RefreshThread extends Thread {
 			this.sleep(1000);
 			if (count)
 			{	time--;
-				
+				formatTime();
 				if (Bukkit.getOnlinePlayers().length < pl.getConfig().getInt("min-players",5))  {
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCNotEnoughPlayers());
 				} else if (time == 0 && count)
