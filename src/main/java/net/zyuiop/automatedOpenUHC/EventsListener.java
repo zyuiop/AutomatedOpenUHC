@@ -70,7 +70,7 @@ public class EventsListener implements Listener {
 					}
 	            	
 	            }
-	        }, pl.getConfig().getInt("bungeecord.move-after",120));
+	        }, pl.getConfig().getInt("bungeecord.move-after",120)*20L);
 		}
 		
 		if (pl.getConfig().getBoolean("restart.enable",true)) {
@@ -78,7 +78,7 @@ public class EventsListener implements Listener {
 	            public void run() {
 	            	pl.getServer().dispatchCommand(pl.getServer().getConsoleSender(), "restart");
 	            }
-	        }, pl.getConfig().getInt("restart.restart-after",125));
+	        }, pl.getConfig().getInt("restart.restart-after",125)*20L);
 		}
 	}
 	
