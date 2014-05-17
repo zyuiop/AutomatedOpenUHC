@@ -8,6 +8,6 @@ begin_timer: "&6Début du jeu dans {TIME}"
 not_enough_players: "&cPlus assez de joueurs pour commencer."
 
 tag_players: "Joueurs"
-tag_min_players: "Joueurs Min."
+tag_min_players: "Minimum"
 tag_start_in: "Début dans"
-tag_waiting: "&cManque joueurs"
+tag_waiting: "Manque joueurs"
