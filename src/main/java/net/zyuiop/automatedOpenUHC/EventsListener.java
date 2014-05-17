@@ -34,10 +34,12 @@ public class EventsListener implements Listener {
 	
 	@EventHandler
 	public void join(PlayerJoinEvent e) {
-		e.getPlayer().setScoreboard(pl.getSbManager().getMainScoreboard());
-		for (Player p : Bukkit.getOnlinePlayers()) {
-			p.setScoreboard(pl.getSbManager().getMainScoreboard());
-		}
+		final Player p = e.getPlayer();
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.pl, new Runnable() {
+            public void run() {
+        		p.setScoreboard(pl.getSbManager().getMainScoreboard());
+            }
+        }, 5L);
 		pl.getSbManager().refresh(); 
 	}
 	
