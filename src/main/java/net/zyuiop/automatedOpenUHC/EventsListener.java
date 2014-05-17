@@ -17,7 +17,7 @@ public class EventsListener implements Listener {
 	
 	@EventHandler
 	public void onCountdownEnd(AUHCCountdownEnded e) {
-		pl.plugin.getGame().start();
+		pl.getServer().dispatchCommand(pl.getServer().getConsoleSender(), "gamestart");
 	}
 	
 	@EventHandler
