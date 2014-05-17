@@ -11,3 +11,6 @@ tag_players: "Joueurs"
 tag_min_players: "Minimum"
 tag_start_in: "Début dans"
 tag_waiting: "&cManque joueurs"
+
+
+bungee_move: "&a&lDéplacement vers &r&b{SERVER}&a&l : la partie est terminée !"

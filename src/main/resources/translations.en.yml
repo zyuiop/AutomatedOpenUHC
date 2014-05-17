@@ -11,3 +11,5 @@ tag_players: "Players"
 tag_min_players: "Minimum"
 tag_start_in: "Game start in"
 tag_waiting: "&cNot enough players"
+
+bungee_move: "&a&lMoving to {SERVER} : game is finished"

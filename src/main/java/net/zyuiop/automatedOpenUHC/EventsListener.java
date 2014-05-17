@@ -31,7 +31,7 @@ public class EventsListener implements Listener {
 		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.pl, new Runnable() {
             public void run() {
             	for (Player p : Bukkit.getServer().getOnlinePlayers())
-            		p.setScoreboard(null);
+            		p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
             	pl.getServer().dispatchCommand(pl.getServer().getConsoleSender(), "gamestart");
             }
         }, 1L);
@@ -61,7 +61,7 @@ public class EventsListener implements Listener {
 	            		out.writeUTF("Connect");
 						out.writeUTF(pl.getConfig().getString("bungeecord.move-to","lobby"));
 						for (Player p : Bukkit.getOnlinePlayers()) {
-							p.sendMessage(">>> Moving to "+pl.getConfig().getString("bungeecord.move-to","lobby")+" <<< "+out.toString());
+							p.sendMessage(pl.localize("bungee_move").replace("{SERVER}",pl.getConfig().getString("bungeecord.move-to","lobby")));
 		            		p.sendPluginMessage(pl, "BungeeCord", b.toByteArray());
 						}
 					} catch (IOException e) {
