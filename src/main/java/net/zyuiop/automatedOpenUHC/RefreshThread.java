@@ -26,6 +26,10 @@ public class RefreshThread extends Thread {
 	  cont = false;
   }
   
+  public void setTime(int time) {
+	  this.time = time;
+  }
+  
   @SuppressWarnings("static-access")
   public void run() {
     while (cont) {
