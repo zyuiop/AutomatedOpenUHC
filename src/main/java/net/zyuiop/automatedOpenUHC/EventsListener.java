@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 public class EventsListener implements Listener {
 	
@@ -35,6 +36,12 @@ public class EventsListener implements Listener {
 	public void join(PlayerJoinEvent e) {
 		e.getPlayer().sendMessage("Log de test");
 		e.getPlayer().setScoreboard(pl.getSbManager().getMainScoreboard());
+		pl.getSbManager().refresh(); 
+	}
+	
+	@EventHandler
+	public void leave(PlayerQuitEvent e) {
+		pl.getSbManager().refresh();
 	}
 	
 	@EventHandler
