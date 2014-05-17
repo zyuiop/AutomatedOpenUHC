@@ -10,6 +10,7 @@ public class RefreshThread extends Thread {
   private AutomatedOpenUHC pl;
   private long time;
   private boolean count = false;
+  private boolean cont = true;
  
   public RefreshThread(AutomatedOpenUHC openUHC) {
 	    this.pl = openUHC;
@@ -21,9 +22,13 @@ public class RefreshThread extends Thread {
 	  time = pl.getConfig().getInt("countdown",120);
   }
   
+  public void end() {
+	  cont = false;
+  }
+  
   @SuppressWarnings("static-access")
   public void run() {
-    while (true) {
+    while (cont) {
     	try {
 			this.sleep(1000);
 			if (count)
@@ -34,7 +39,7 @@ public class RefreshThread extends Thread {
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCNotEnoughPlayers());
 				} else if (time == 0 && count) {
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCCountdownEnded());
-					return;
+					cont = false;
 				}
 			}
 			else {

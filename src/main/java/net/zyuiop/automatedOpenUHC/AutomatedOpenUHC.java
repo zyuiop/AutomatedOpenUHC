@@ -82,4 +82,8 @@ public class AutomatedOpenUHC extends JavaPlugin {
 			tran = ChatColor.translateAlternateColorCodes('&', tran); //Colors
 		return tran;
 	}
+	
+	public void onDisable() {
+		thread.end();
+	}
 }
