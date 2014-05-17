@@ -33,6 +33,8 @@ public class AutomatedOpenUHC extends JavaPlugin {
 		
 		getServer().getPluginManager().registerEvents(new EventsListener(this), this);
 		manager.init();
+		
+		if (getConfig().getBoolean("bungeecord.enable",false)) this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 	}
 	
 	public ScoreboardManager getSbManager() {
