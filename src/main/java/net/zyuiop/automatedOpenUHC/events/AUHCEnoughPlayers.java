@@ -10,10 +10,13 @@ import org.bukkit.event.HandlerList;
  */
 public class AUHCEnoughPlayers extends Event {
 	
+	private static final HandlerList handlers = new HandlerList();
 	@Override
 	public HandlerList getHandlers() {
-		// TODO Auto-generated method stub
-		return null;
+		return handlers;
 	}
+	public static HandlerList getHandlerList() {
+        return handlers;
+    }
 
 }
