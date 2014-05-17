@@ -17,7 +17,12 @@ public class EventsListener implements Listener {
 	
 	@EventHandler
 	public void onCountdownEnd(AUHCCountdownEnded e) {
-		pl.getServer().dispatchCommand(pl.getServer().getConsoleSender(), "gamestart");
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.pl, new Runnable() {
+            public void run() {
+            	pl.getServer().dispatchCommand(pl.getServer().getConsoleSender(), "gamestart");
+            }
+        }, 1L);
+		
 	}
 	
 	@EventHandler
