@@ -1,1 +1,8 @@
 # Translation file
+
+hours: "heures"
+minutes: "minutes"
+seconds: "secondes"
+
+begin_timer: "&6Début du jeu dans {TIME}"
+not_enough_players: "&cPlus assez de joueurs pour commencer."
