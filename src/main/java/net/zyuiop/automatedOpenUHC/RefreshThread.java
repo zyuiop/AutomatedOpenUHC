@@ -27,12 +27,15 @@ public class RefreshThread extends Thread {
     	try {
 			this.sleep(1000);
 			if (count)
-			{	time--;
+			{	
 				formatTime();
+				time--;
 				if (Bukkit.getOnlinePlayers().length < pl.getConfig().getInt("min-players",5))  {
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCNotEnoughPlayers());
-				} else if (time == 0 && count)
+				} else if (time == 0 && count) {
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCCountdownEnded());
+					return;
+				}
 			}
 			else {
 				if (Bukkit.getOnlinePlayers().length >= pl.getConfig().getInt("min-players",5))  {
@@ -64,7 +67,7 @@ public class RefreshThread extends Thread {
 	    	if ((mins == 45 || mins == 30 || mins == 20 || mins == 10 || mins == 5 || mins == 3 || mins == 2 || mins == 1) && secs == 0) time = mins+" "+pl.localize("minutes");
 	    	if (mins == 1 && secs == 30) time = mins+" "+pl.localize("minutes")+" "+secs+" "+pl.localize("seconds");
 	    	if (mins == 0) {
-	    		if (secs == 30 || secs == 10 || (secs <= 5 && secs != 0)) time = secs+" "+pl.localize("seconds");
+	    		if (secs == 30 || secs == 10 || (secs <= 5 && secs > 0)) time = secs+" "+pl.localize("seconds");
 	    	}
 	    }
 	    if (time != null)
