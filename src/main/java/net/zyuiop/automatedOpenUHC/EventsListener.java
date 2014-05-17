@@ -60,8 +60,10 @@ public class EventsListener implements Listener {
 	            	try {
 	            		out.writeUTF("Connect");
 						out.writeUTF(pl.getConfig().getString("bungeecord.move-to","lobby"));
-						for (Player p : Bukkit.getOnlinePlayers())
+						for (Player p : Bukkit.getOnlinePlayers()) {
+							p.sendMessage(">>> Moving to "+pl.getConfig().getString("bungeecord.move-to","lobby")+" <<< "+out.toString());
 		            		p.sendPluginMessage(pl, "BungeeCord", b.toByteArray());
+						}
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

@@ -2,6 +2,7 @@ name: AutomatedOpenUHC
 main: net.zyuiop.automatedOpenUHC.AutomatedOpenUHC
 version: 0.0.1
 authors: [zyuiop, Gnomino]
+depends: [OpenUHC]
 commands:
     force:
         description: Force game begin
