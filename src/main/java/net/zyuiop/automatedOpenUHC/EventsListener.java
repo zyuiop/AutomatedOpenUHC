@@ -34,8 +34,10 @@ public class EventsListener implements Listener {
 	
 	@EventHandler
 	public void join(PlayerJoinEvent e) {
-		e.getPlayer().sendMessage("Log de test");
 		e.getPlayer().setScoreboard(pl.getSbManager().getMainScoreboard());
+		for (Player p : Bukkit.getOnlinePlayers()) {
+			p.setScoreboard(pl.getSbManager().getMainScoreboard());
+		}
 		pl.getSbManager().refresh(); 
 	}
 	
