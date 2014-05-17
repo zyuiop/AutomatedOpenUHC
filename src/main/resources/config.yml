@@ -6,16 +6,16 @@
 min-players: 5
 
 # Countdown before game start when min-players is reached
-countdown: 120
+countdown: 180
 
-language: fr
+language: en
 
 bungeecord:
    enable: false # Set true if you use bungee cord proxy. It will move all players to "move-to" server after "move-after" seconds
    move-to: lobby
-   move-after: 120
+   move-after: 60
 
 restart:
    enable: true
-   restart-after: 125
+   restart-after: 65
 
