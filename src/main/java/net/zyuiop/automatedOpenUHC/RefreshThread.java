@@ -11,18 +11,14 @@ public class RefreshThread extends Thread {
   private long time;
   private boolean count = false;
  
-  public RefreshThread(AutomatedOpenUHC openUHC, long time) {
-	  	this.time = time;
-	  	this.pl = openUHC;
-  }
-  
   public RefreshThread(AutomatedOpenUHC openUHC) {
-	    this(openUHC, -1);
+	    this.pl = openUHC;
+	    this.time = -1;
   }
   
   public void setCountdownEnabled(boolean enable) {
 	  count = true;
-	  pl.getConfig().getInt("countdown",120);
+	  time = pl.getConfig().getInt("countdown",120);
   }
   
   @SuppressWarnings("static-access")
@@ -33,18 +29,16 @@ public class RefreshThread extends Thread {
 			if (count)
 			{	time--;
 				
-				
-				
-				if (time == 0)
+				if (Bukkit.getOnlinePlayers().length < pl.getConfig().getInt("min-players",5))  {
+					Bukkit.getServer().getPluginManager().callEvent(new AUHCNotEnoughPlayers());
+				} else if (time == 0 && count)
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCCountdownEnded());
 			}
 			else {
 				if (Bukkit.getOnlinePlayers().length >= pl.getConfig().getInt("min-players",5))  {
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCEnoughPlayers());
 				}
-				else if (Bukkit.getOnlinePlayers().length < pl.getConfig().getInt("min-players",5))  {
-					Bukkit.getServer().getPluginManager().callEvent(new AUHCNotEnoughPlayers());
-				}
+				
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

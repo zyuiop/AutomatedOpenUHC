@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.InputStream;
 
 import net.zyuiop.openUHC.OpenUHC;
+import net.zyuiop.openUHC.listeners.BlockEvents;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,12 +16,21 @@ public class AutomatedOpenUHC extends JavaPlugin {
 	
 	public OpenUHC plugin = null;
 	public String language = null;
+	public RefreshThread thread = null;
 	
 	public void onEnable() {
 		this.language = getConfig().getString("language", "en");
 		loadTranslations();
 		
 		plugin = (OpenUHC) getServer().getPluginManager().getPlugin("OpenUHC");
+		thread = new RefreshThread(this);
+		thread.run();
+		
+		getServer().getPluginManager().registerEvents(new EventsListener(this), this);
+	}
+	
+	public RefreshThread getThread() {
+		return thread;
 	}
 	
 	private FileConfiguration translationsFile = null;
