@@ -2,7 +2,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>net.zyuiop.automatedOpenUHC</groupId>
    <artifactId>AutomatedOpenUHC</artifactId>
-   <version>SNAPSHOT-0.0.1</version>
+   <version>1.0.0</version>
    <name>AutomatedOpenUHC</name>
    <repositories>
         <repository>
