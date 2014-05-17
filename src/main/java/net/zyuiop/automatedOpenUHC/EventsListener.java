@@ -7,6 +7,7 @@ import net.zyuiop.automatedOpenUHC.events.AUHCNotEnoughPlayers;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -22,6 +23,8 @@ public class EventsListener implements Listener {
 	public void onCountdownEnd(AUHCCountdownEnded e) {
 		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.pl, new Runnable() {
             public void run() {
+            	for (Player p : Bukkit.getServer().getOnlinePlayers())
+            		p.setScoreboard(null);
             	pl.getServer().dispatchCommand(pl.getServer().getConsoleSender(), "gamestart");
             }
         }, 1L);
