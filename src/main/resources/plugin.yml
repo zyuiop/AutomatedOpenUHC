@@ -1,0 +1,14 @@
+name: AutomatedOpenUHC
+main: net.zyuiop.automatedOpenUHC.AutomatedOpenUHC
+version: 0.0.1
+authors: [zyuiop, Gnomino]
+commands:
+    force:
+        description: Force game begin
+        usage: /<command>
+        permission: autouhpl.admin
+        permission-message: Missing permission
+permissions:
+    autouhpl.admin:
+      description: Allow admin commands
+      default: op

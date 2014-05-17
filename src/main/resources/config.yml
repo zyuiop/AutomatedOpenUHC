@@ -1,0 +1,11 @@
+##########################################
+# Config du plugin AutomatedOpenUHC      #
+##########################################
+
+# Minimum players to run the game
+min-players: 5
+
+# Countdown before game start when min-players is reached
+countdown: 120
+
+language: fr

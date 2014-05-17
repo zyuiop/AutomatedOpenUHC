@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>net.zyuiop.automatedOpenUHC</groupId>
+   <artifactId>AutomatedOpenUHC</artifactId>
+   <version>SNAPSHOT-0.0.1</version>
+   <name>AutomatedOpenUHC</name>
+   <repositories>
+        <repository>
+          <id>spigot-repo</id>
+          <url>http://repo.md-5.net/content/groups/public/</url>
+        </repository>
+    </repositories>
+   <dependencies>
+    	<dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <scope>provided</scope>
+            <version>1.7.2-R0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>net.zyuiop.openUHC</groupId>
+            <artifactId>OpenUHC</artifactId>
+            <version>SNAPSHOT-1.0.0</version>
+        </dependency> 
+
+   </dependencies>
+   <ciManagement>
+   	<system>Jenkins</system>
+   	<url>http://ci.zyuiop.net/</url>
+   </ciManagement>
+</project>
