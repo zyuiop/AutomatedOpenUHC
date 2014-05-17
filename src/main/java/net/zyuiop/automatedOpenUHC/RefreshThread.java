@@ -77,7 +77,7 @@ public class RefreshThread extends Thread {
 	    	if ((mins == 45 || mins == 30 || mins == 20 || mins == 10 || mins == 5 || mins == 3 || mins == 2 || mins == 1) && secs == 0) time = mins+" "+pl.localize("minutes");
 	    	if (mins == 1 && secs == 30) time = mins+" "+pl.localize("minutes")+" "+secs+" "+pl.localize("seconds");
 	    	if (mins == 0) {
-	    		if (secs == 30 || secs == 10 || (secs <= 5 && secs > 0)) time = secs+" "+pl.localize("seconds");
+	    		if (secs == 30 || secs == 20 || secs == 10 || (secs <= 5 && secs > 0)) time = secs+" "+pl.localize("seconds");
 	    	}
 	    }
 	    if (time != null)
