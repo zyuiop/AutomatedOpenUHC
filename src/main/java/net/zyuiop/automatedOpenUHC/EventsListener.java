@@ -58,7 +58,7 @@ public class EventsListener implements Listener {
 
 	            	
 	            	try {
-	            		out.writeUTF("ConnectOther");
+	            		out.writeUTF("Connect");
 						out.writeUTF(pl.getConfig().getString("bungeecord.move-to","lobby"));
 						for (Player p : Bukkit.getOnlinePlayers())
 		            		p.sendPluginMessage(pl, "BungeeCord", b.toByteArray());
