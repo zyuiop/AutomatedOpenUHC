@@ -17,6 +17,7 @@ public class AutomatedOpenUHC extends JavaPlugin {
 	public OpenUHC plugin = null;
 	public String language = null;
 	public RefreshThread thread = null;
+	private ScoreboardManager manager = new ScoreboardManager(this);
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
@@ -31,6 +32,11 @@ public class AutomatedOpenUHC extends JavaPlugin {
 		thread.start();
 		
 		getServer().getPluginManager().registerEvents(new EventsListener(this), this);
+		manager.init();
+	}
+	
+	public ScoreboardManager getSbManager() {
+		return manager;
 	}
 	
 	public RefreshThread getThread() {

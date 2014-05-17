@@ -6,3 +6,8 @@ seconds: "seconds"
 
 begin_timer: "&6Game begins in {TIME}"
 not_enough_players: "&cNot enough players to start."
+
+tag_players: "Players"
+tag_min_players: "Min. Players"
+tag_start_in: "Game start in"
+tag_waiting: "&cMissing players"
