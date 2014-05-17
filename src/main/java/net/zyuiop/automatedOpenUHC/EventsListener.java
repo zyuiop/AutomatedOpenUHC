@@ -41,17 +41,6 @@ public class EventsListener implements Listener {
         		p.setScoreboard(pl.getSbManager().getMainScoreboard());
             }
         }, 5L);
-		pl.getSbManager().refresh(); 
-	}
-	
-	@EventHandler
-	public void leave(PlayerQuitEvent e) {
-		pl.getSbManager().refresh();
-	}
-	
-	@EventHandler
-	public void leave(PlayerKickEvent e) {
-		pl.getSbManager().refresh();
 	}
 	
 	@EventHandler

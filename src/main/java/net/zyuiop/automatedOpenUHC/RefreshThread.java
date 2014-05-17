@@ -51,7 +51,7 @@ public class RefreshThread extends Thread {
 				if (Bukkit.getOnlinePlayers().length >= pl.getConfig().getInt("min-players",5))  {
 					Bukkit.getServer().getPluginManager().callEvent(new AUHCEnoughPlayers());
 				}
-				
+				pl.getSbManager().refresh();
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
