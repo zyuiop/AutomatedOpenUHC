@@ -24,7 +24,7 @@ public class AutomatedOpenUHC extends JavaPlugin {
 		
 		plugin = (OpenUHC) getServer().getPluginManager().getPlugin("OpenUHC");
 		thread = new RefreshThread(this);
-		thread.run();
+		thread.start();
 		
 		getServer().getPluginManager().registerEvents(new EventsListener(this), this);
 	}
