@@ -18,7 +18,7 @@ public class RefreshThread extends Thread {
   }
   
   public void setCountdownEnabled(boolean enable) {
-	  count = true;
+	  count = enable;
 	  time = pl.getConfig().getInt("countdown",120);
   }
   
