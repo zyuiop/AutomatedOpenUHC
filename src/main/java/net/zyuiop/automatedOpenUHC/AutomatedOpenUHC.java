@@ -17,7 +17,7 @@ public class AutomatedOpenUHC extends JavaPlugin {
 	public OpenUHC plugin = null;
 	public String language = null;
 	public RefreshThread thread = null;
-	private ScoreboardManager manager = new ScoreboardManager(this);
+	private ScoreboardManager manager = null;
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
@@ -33,6 +33,8 @@ public class AutomatedOpenUHC extends JavaPlugin {
 		
 		getServer().getPluginManager().registerEvents(new EventsListener(this), this);
 		manager.init();
+		
+		manager = new ScoreboardManager(this);
 		
 		if (getConfig().getBoolean("bungeecord.enable",false)) this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 	}
